@@ -118,7 +118,7 @@ namespace Andromeda.DataBuilder.D2O
             targetNamespace.Types.Add(targetClass);
             targetUnit.Namespaces.Add(targetNamespace);
             var filePath = IsNotHandledNamespace(_currentDefinition.Name)
-                ? $@".\D2OModels\{GetNotHandledNamespaces(_currentDefinition.Name).Replace(_constants.D2ONamepace + ".", string.Empty).Replace(".", @"\")}\"
+                ? $@".\D2OModels\{GetNotHandledNamespaces(_currentDefinition.Name).Replace(_constants.D2ONamespace + ".", string.Empty).Replace(".", @"\")}\"
                 : $@".\D2OModels\{CleanPackageName(_currentDefinition.PackageName).Replace(".", @"\")}\";
             var fileName = $"{_currentDefinition.Name}.cs";
 
@@ -134,7 +134,7 @@ namespace Andromeda.DataBuilder.D2O
             File.WriteAllText(filePath + fileName, postProcessed);
         }
 
-        private string GetCleanNamespace(string packageName) => _constants.D2ONamepace + "." + CleanPackageName(packageName);
+        private string GetCleanNamespace(string packageName) => _constants.D2ONamespace + "." + CleanPackageName(packageName);
         private string CleanPackageName(string packageName) => string.Join('.', packageName.Split('.').Skip(4));
         private bool IsNotHandledNamespace(string className) => GetNotHandledNamespaces(className) != string.Empty;
         private string GetNotHandledNamespaces(string className)
@@ -144,13 +144,13 @@ namespace Andromeda.DataBuilder.D2O
                 case "Point":
                 case "Rectangle":
                 case "TransformData":
-                    return $"{_constants.D2ONamepace}.utils";
+                    return $"{_constants.D2ONamespace}.utils";
                 case "AmbientSound":
                 case "PlaylistSound":
-                    return $"{_constants.D2ONamepace}.ambientSounds";
-                case "EffectInstance": return $"{_constants.D2ONamepace}.effects";
-                case "EffectInstanceDice": return $"{_constants.D2ONamepace}.effects.instances";
-                case "QuestObjectiveParameters": return $"{_constants.D2ONamepace}.quest.objectives";
+                    return $"{_constants.D2ONamespace}.ambientSounds";
+                case "EffectInstance": return $"{_constants.D2ONamespace}.effects";
+                case "EffectInstanceDice": return $"{_constants.D2ONamespace}.effects.instances";
+                case "QuestObjectiveParameters": return $"{_constants.D2ONamespace}.quest.objectives";
                 default:
                     return string.Empty;
             }
