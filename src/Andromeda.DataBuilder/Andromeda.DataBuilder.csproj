@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.CodeDom" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Andromeda.Data.Parsing\Andromeda.Data.Parsing.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Andromeda.Binary">
+      <HintPath>..\..\dependencies\Andromeda.Binary.dll</HintPath>
+    </Reference>
+    <Reference Include="Andromeda.Core">
+      <HintPath>..\..\dependencies\Andromeda.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Andromeda.IoC">
+      <HintPath>..\..\dependencies\Andromeda.IoC.dll</HintPath>
+    </Reference>
+    <Reference Include="Andromeda.Logging">
+      <HintPath>..\..\dependencies\Andromeda.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Andromeda.Serialization">
+      <HintPath>..\..\dependencies\Andromeda.Serialization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

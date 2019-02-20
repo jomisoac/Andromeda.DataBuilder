@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Andromeda.Binary">
+      <HintPath>..\..\dependencies\Andromeda.Binary.dll</HintPath>
+    </Reference>
+    <Reference Include="Andromeda.Core">
+      <HintPath>..\..\dependencies\Andromeda.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Andromeda.IoC">
+      <HintPath>..\..\dependencies\Andromeda.IoC.dll</HintPath>
+    </Reference>
+    <Reference Include="Andromeda.Serialization">
+      <HintPath>..\..\dependencies\Andromeda.Serialization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
